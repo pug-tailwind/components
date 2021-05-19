@@ -1,8 +1,8 @@
 //- Generic button
-mixin btn(size='sm', color='gray')
-  button.inline-flex.justify-center.py-2.px-4.border.border-transparent.shadow-sm.font-medium.rounded-md.text-white(
+mixin btn()
+  button.inline-flex.justify-center.py-2.px-4.border.border-transparent.shadow-sm.font-medium.rounded-md.text-white.focus_outline-none.focus_ring-2.focus_ring-offset-2.text-base.bg-gray-600.hover_bg-gray-700.focus_ring-gray-500(
     type='button' 
-    class='hover_bg-' + color + '-700 focus_outline-none focus_ring-2 focus_ring-offset-2 focus_ring-' + color + '-500 text-' + size + ' bg-' + color + '-600')&attributes(attributes)
+    )&attributes(attributes)
     block
 
 //- Generic Round button
@@ -27,6 +27,7 @@ mixin btn-outline(size='sm', color='gray')
     class='hover_bg-' + color + '-700 hover_text-white focus_outline-none focus_ring-2 focus_ring-offset-2 focus_ring-' + color + '-500 text-' 
     + size + '  text-' + color + '-600 border-' + color + '-300')&attributes(attributes)
     block
+
 //- Small buttons
 mixin btn-gray()
   button.inline-flex.justify-center.py-2.px-4.border.border-transparent.shadow-sm.text-sm.font-medium.rounded-md.text-white.bg-gray-600(

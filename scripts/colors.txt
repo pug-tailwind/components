@@ -1,0 +1,8 @@
+gray Gray
+red Red
+yellow Yellow
+green Green
+blue Blue
+indigo Indigo
+purple Purple
+pink Pink

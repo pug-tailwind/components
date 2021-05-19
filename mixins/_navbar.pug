@@ -18,28 +18,3 @@ mixin navbar(color='gray')
         a.text-gray-300.block.px-3.py-2.rounded-md.text-base.font-medium(href='#' class='hover_bg-gray-700 hover_text-white') Projects
         a.text-gray-300.block.px-3.py-2.rounded-md.text-base.font-medium(href='#' class='hover_bg-gray-700 hover_text-white') Calendar
  
-mixin nav-link(href, active, color='gray')
-  - const activeClass = 'bg-' + color + '-900 text-white'
-  - const inActiveClass = 'text-' + color + '-300 hover_bg-' + color + '-700 hover_text-white'
-  a.px-3.py-2.rounded-md.text-sm.font-medium(
-    href=href
-    aria-current='page' 
-    class=active === href ? activeClass : inActiveClass
-    )
-    block
-
-mixin nav-link-gray(href, active)
-  a.px-3.py-2.rounded-md.text-sm.font-medium(
-    href=href
-    aria-current='page' 
-    class=active === href ? 'bg-gray-900 text-white' : 'text-gray-300 hover_bg-gray-700 hover_text-white'
-    )
-    block
-
-mixin nav-link-red(href, active)
-  a.px-3.py-2.rounded-md.text-sm.font-medium(
-    href=href
-    aria-current='page' 
-    class=active === href ? 'bg-red-900 text-white' : 'text-red-300 hover_bg-red-700 hover_text-white'
-    )
-    block
