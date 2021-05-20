@@ -3,6 +3,7 @@
 const { exec } = require('child_process');
 const fs = require('fs');
 const fsPromises = fs.promises;
+const fse = require('fs-extra');
 
 console.log('Copying mixins from @pug-tailwind/components to views/tailwind');
 exec('echo "$INIT_CWD"', (error, stdout, stderr) => {
@@ -11,8 +12,9 @@ exec('echo "$INIT_CWD"', (error, stdout, stderr) => {
   const mixinPath = `${workingDir}/node_modules/@pug-tailwind/components/mixins`;
   const mixins = fs.readdirSync(mixinPath);
   const destDir = `${workingDir}/views/tailwind/`;
+  /*
   if(!fs.existsSync(destDir)) {
-    fs.mkdirSync(destDir);
+    fs.mkdirSync(destDir, { recursive: true });
   }
   mixins.forEach(m => {
     const source = `${mixinPath}/${m}`;
@@ -21,4 +23,11 @@ exec('echo "$INIT_CWD"', (error, stdout, stderr) => {
       .then(() => console.log(`${m} was copied to ${destDir}`))
       .catch(() => console.log(`${m} could not be copied`));
   });
+  */
+  try {
+    fse.copySync(mixinPath, destDir);
+    console.log('success');
+  } catch(err) {
+    console.error(err);
+  }
 });

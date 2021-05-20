@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/pug-tailwind/components#readme",
   "dependencies": {
+    "fs-extra": "^10.0.0",
     "pug": "^3.0.2"
   }
 }
